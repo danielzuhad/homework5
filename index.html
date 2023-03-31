@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="tab">
+      <button class="tablinks" onclick="openCity(event, 'formulir')">
+        Registrasi
+      </button>
+      <button class="tablinks" onclick="openCity(event, 'list-pendaftar')">
+        List Pendfatar
+      </button>
+    </div>
+    <!-- Form -->
+    <div id="formulir" class="container tabcontent">
+      <form id="form">
+        <h2>Form Data</h2>
+        <div class="form-group">
+          <label for="name">Nama (min. 10 karakter)</label>
+          <input type="text" id="name" name="name" required minlength="10" />
+        </div>
+        <div class="form-group">
+          <label for="age">Umur (min. 25 tahun)</label>
+          <input type="number" id="age" name="age" required min="25" />
+        </div>
+        <div class="form-group">
+          <label for="budget">Budget (Rp100.000 - Rp1.000.000)</label>
+          <input
+            type="number"
+            id="budget"
+            name="budget"
+            required
+            min="100000"
+            max="1000000"
+          />
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+      <br />
+      <br />
+    </div>
+    <!-- List Pendaftar -->
+    <div id="list-pendaftar" class="data-container tabcontent">
+      <h2>Data</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Nama</th>
+            <th>Umur</th>
+            <th>Budget</th>
+          </tr>
+        </thead>
+        <tbody id="data-table"></tbody>
+      </table>
+      <br />
+      <br />
+      <div class="average-container">
+        <p>Rata-rata umur: <span class="age"></span></p>
+        <p>Rata-rata budget: <span class="budget"></span></p>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
